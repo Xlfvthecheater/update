@@ -1,0 +1,1403 @@
+getgenv().gloryv2 = {
+    ["Global"] = {
+        ["Mod Detector"] = true, -- Will kick you if a Mod is in-game
+        ["Key"] = "SjmSwqzoyfjpuuZlJfTZqLxuvwyMKmEU" -- key for luarmor g
+    },
+    ["Binds"] = { -- Keybinds for certain things
+        ['Select'] = "C", -- Select // Target Keybind
+        ['Camera Aimbot'] = "C", -- Camera Aimbot Toggle
+        ['Triggerbot'] = "C", -- Triggerbot Activation Bind
+        ['Speed'] = "V" -- Speed Modifications Toggle
+    },
+    ['Targeting'] = {
+        ['Target Mode'] = 'Automatic' -- Automatic // Select
+    },
+    ['Select Only Features'] = {
+        ['Force Hit'] = true,
+        ['Force Trigger'] = true
+    },
+    ["Checks"] = {  -- Checks before targeting, don't touch unless you know what you're doing.
+        ['Visible Check'] = true,
+        ['Knock Check'] = true,
+        ['Crew Check'] = true,
+        ['Grabbed Check'] = true,
+        ['Self Knock Check'] = true,
+        ['Forcefield Check'] = true
+    },
+    ['Silent Aimbot'] = {
+        ['Enabled'] = true, -- Silent Aimbot toggle
+        ['Max Range'] = 750, -- Maximum Range for Activation
+        ['HitPart'] = "Precise Point",  -- Precise Point // Center Point // Closest Part // R15
+        ['Prediction'] = { -- Predicts Movement
+            ['X'] = 0,
+            ['Y'] = 0,
+            ['Z'] = 0
+        },
+        ['FOV'] = { -- Visualize FOV, use this only if you're testing FOV's. Visualization = Red
+            ['Show FOV'] = false,
+            ["X Left"] = 4,
+            ["X Right"] = 4,
+            ["Y Upper"] = 4,
+            ["Y Lower"] = 4,
+            ["Z Left"] = 4,
+            ["Z Right"] = 4,
+            ['Weapon Configuration'] = { -- Configured via Weapons
+                ['Enabled'] = false,
+                ['Shotguns'] = {
+                    ["X Left"] = 1.011, ["X Right"] = 1.62,
+                    ["Y Upper"] = 2.025, ["Y Lower"] = 3.225,
+                    ["Z Left"] = 1.175, ["Z Right"] = 1.212
+                },
+                ['Pistols'] = {
+                    ["X Left"] = 1.011, ["X Right"] = 1.52,
+                    ["Y Upper"] = 2.025, ["Y Lower"] = 3.425,
+                    ["Z Left"] = 1.175, ["Z Right"] = 1.21
+                },
+                ['Automatics'] = {
+                    ["X Left"] = 2.5, ["X Right"] = 2.5,
+                    ["Y Upper"] = 2.5, ["Y Lower"] = 2.5,
+                    ["Z Left"] = 2.5, ["Z Right"] = 2.5
+                },
+                ['Rifles'] = {
+                    ["X Left"] = 2.5, ["X Right"] = 2.5,
+                    ["Y Upper"] = 2.5, ["Y Lower"] = 2.5,
+                    ["Z Left"] = 2.5, ["Z Right"] = 2.5
+                },
+                ['Others'] = {
+                    ["X Left"] = 2.5, ["X Right"] = 2.5,
+                    ["Y Upper"] = 2.5, ["Y Lower"] = 2.5,
+                    ["Z Left"] = 2.5, ["Z Right"] = 2.5
+                }
+            }
+        }
+    },
+    ['Anti Curve'] = { -- Checks Angles via gun barrels to see if silent aim should activate
+        ['Enabled'] = false,
+        ['Angle'] = 0.5,
+        ['Weapon Configuration'] = { -- Configurable Angles via different weapons.
+            ['Enabled'] = true,
+            ['Shotguns'] = { ['Angle'] = 1.1 },
+            ['Pistols'] = { ['Angle'] = 0.7 },
+            ['Automatics'] = { ['Angle'] = 0.45 },
+            ['Rifles'] = { ['Angle'] = 0.4 },
+            ['Others'] = { ['Angle'] = 0.5 }
+        }
+    },
+    ['Camera Aimbot'] = {
+        ['Enabled'] = true,
+        ['Max Range'] = 750, -- Maximum Range for Activation
+        ['Mode'] = "Hold", -- Toggle / Hold
+        ['HitPart'] = "Closest Part", -- Precise Point // Center Point // Closest Part // R15
+        ['Smoothing'] = { -- Determines how smooth your Camera Aimbot is, the higher the more blatant the lower the more legit etc.
+            ['Enabled'] = true,
+            ['X'] = 0.587, -- Smoothness via Side to Side Movement
+            ['Y'] = 0.539 -- Smoothness via Jumping
+        },
+        ['Range Smoothing'] = {  -- determines smoothness based on distance
+            ['Enabled'] = true,
+            ['Close'] = { ['X'] = 0.080, ['Y'] = 0.045 },
+            ['Medium'] = { ['X'] = 0.07, ['Y'] = 0.035 },
+            ['Far'] = { ['X'] = 0.03, ['Y'] = 0.025 }
+        },
+         ['Easing'] = "Linear", -- https://create.roblox.com/docs/reference/engine/enums/EasingStyle
+        ['Humanize'] = {
+            ['Bezier'] = false, -- makes aimbot humanized by using curved paths
+            ['Enabled'] = true, -- enables humanizer (different from bezier)
+            ['Scale'] = 0.009 -- humanizes aimbot, keep this setting the same any higher =
+        },
+        ['Prediction'] = {-- Predicts Movement
+            ['X'] = 0,
+            ['Y'] = 0,
+            ['Z'] = 0
+        },
+        ['Camera Aimbot Conditions'] = {-- Specific Conditions, true = Camera Aimbot will activate via this condition false = it wont activate if this condition is met.
+            ['First Person'] = true,
+            ['Third Person'] = false,
+            ['Right Click'] = true,
+            ['Wall'] = false -- will temporarily untarget until target is back in wall (don't touch this unless u want ur camera aimbot aiming behind the wall)
+        },
+        ['FOV'] = {
+            ['Radius'] = "165",
+            ['Show FOV'] = false 
+        }
+    },
+    ['Trigger Bot'] = {
+       ['Enabled'] = true, -- Trigger Bot toggle
+       ['Max Range'] = 250, -- Maximum Range for Activation
+        ['Settings'] = {
+            ['Mode'] = "Hold", -- Always // Hold // Toggle // USE ALWAYS IF UR SELECT MODE AND RAGING
+            ['Type'] = "FOV" -- FOV // Hitbox
+        },
+        ['Delay Settings'] = {-- Configurable Delay
+            ['Delay Toggle'] = true,
+            ['Delay'] = 0, -- 0.095 = 95 milliseconds
+            ['Weapon Configuration'] = {-- determines your delay based on weapon based configurations
+                ['Enabled'] = true,
+                ['Shotguns'] = { ['Delay'] = 0.013 },
+                ['Pistols'] = { ['Delay'] = 0.007 },
+                ['Automatics'] = { ['Delay'] = 0.04 },
+                ['Rifles'] = { ['Delay'] = 0.06 },
+                ['Others'] = { ['Delay'] = 0.095 }
+            }
+        },
+        ['Prediction'] = { -- Predicts movement but you HAVE to trace.
+            ['X'] = 0,
+            ['Y'] = 0,
+            ['Z'] = 0
+        },
+        ['FOV'] = { 
+            ['Show FOV'] = false, -- USE WHILE CONFIGGING. Visualization = White
+            ['Size'] = {
+                ["X Left"] = 4,
+                ["X Right"] = 4,
+                ["Y Upper"] = 4,
+                ["Y Lower"] = 4,
+                ["Z Left"] = 4,
+                ["Z Right"] = 4
+            },
+            ['Weapon Configuration'] = { -- Weapon Configured FOV's
+                ['Enabled'] = false,
+                ['Shotguns'] = {
+                    ["X Left"] = 1.62, ["X Right"] = 1.62,
+                    ["Y Upper"] = 2.6, ["Y Lower"] = 2.6,
+                    ["Z Left"] = 1.175, ["Z Right"] = 1.175
+                },
+                ['Pistols'] = {
+                    ["X Left"] = 1.02, ["X Right"] = 1.02,
+                    ["Y Upper"] = 2.6, ["Y Lower"] = 2.6,
+                    ["Z Left"] = 1.175, ["Z Right"] = 1.175
+                },
+                ['Automatics'] = {
+                    ["X Left"] = 2.5, ["X Right"] = 2.5,
+                    ["Y Upper"] = 2.5, ["Y Lower"] = 2.5,
+                    ["Z Left"] = 2.5, ["Z Right"] = 2.5
+                },
+                ['Rifles'] = {
+                    ["X Left"] = 2.5, ["X Right"] = 2.5,
+                    ["Y Upper"] = 2.5, ["Y Lower"] = 2.5,
+                    ["Z Left"] = 2.5, ["Z Right"] = 2.5
+                },
+                ['Others'] = {
+                    ["X Left"] = 2.5, ["X Right"] = 2.5,
+                    ["Y Upper"] = 2.5, ["Y Lower"] = 2.5,
+                    ["Z Left"] = 2.5, ["Z Right"] = 2.5
+                }
+            }
+        }
+    },
+    ['Spread Modifications'] = { -- Spread Modifications for Shotguns :P
+        ['Enabled'] = false,
+        ['Mode'] = "Fixed", -- "Fixed" or "Randomized"
+        ['Double-Barrel SG'] = { ['Fixed'] = 0, ['Min'] = 0.2, ['Max'] = 0.6 },
+        ['TacticalShotgun'] = { ['Fixed'] = 0, ['Min'] = 0.2, ['Max'] = 0.5 },
+        ['Shotgun'] = { ['Fixed'] = 0.9, ['Min'] = 0.85, ['Max'] = 0.95 },
+        ['DrumShotgun'] = { ['Fixed'] = 0.85, ['Min'] = 0.8, ['Max'] = 0.9 }
+    },
+    ['Speed Modifications'] = { -- Modifies your speed, works universally.
+        ['Enabled'] = false,
+        ['Normal'] = { ['Multiplier'] = 8.8 },
+        ['Low Health'] = { ['Health Threshold'] = 35, ['Multiplier'] = 1.8 }
+    }
+}
+
+getgenv().LPH_NO_VIRTUALIZE = function(f) return f end
+
+
+local Players = game:GetService("Players")
+local RunService = game:GetService("RunService")
+local UserInputService = game:GetService("UserInputService")
+local Workspace = game:GetService("Workspace")
+local localPlayer = Players.LocalPlayer
+local camera = Workspace.CurrentCamera
+local mouse = localPlayer:GetMouse()
+
+local triggerBotActive = false
+local triggerHold = false
+local lastTriggerTime = 0
+local lastCamUpdate = 0
+local camLastUpdate = 0
+local CAM_UPDATE_RATE = 1/60
+local camFOVLastUpdate = 0
+local CAM_FOV_UPDATE_RATE = 1/60
+local camFOVCircle = nil
+local lastMousePos = nil
+local lastVisualUpdate = 0
+local VISUAL_UPDATE_RATE = 1/60
+local currentTargetPlayer = nil
+local leftCtrlHeld = false
+local targetPlayer = nil
+local camLockActive = false
+local camLockHold = false
+local camLockTarget = nil
+local camLockPart = nil
+local rightClickHeld = false
+
+local ShotgunNames = { ["Double-Barrel SG"]=true, ["TacticalShotgun"]=true, ["Shotgun"]=true, ["DrumShotgun"]=true }
+local PistolNames = { ["Revolver"]=true, ["Silencer"]=true, ["Glock"]=true }
+local AutomaticNames = { ["AK-47"]=true, ["AR"]=true, ["Silencer AR"]=true, ["Drum Gun"]=true }
+local RifleNames = { ["AUG"]=true, ["P90"]=true, ["Rifle"]=true }
+
+local targetCache = {
+    Player = nil, Root = nil, Hitbox = nil, Box = nil,
+    Trigger = nil, TriggerBox = nil,
+    lastWeapon = nil,
+    SilentFOV = {}, TriggerFOV = {}
+}
+
+local R15_PARTS = {
+    "Head", "UpperTorso", "LowerTorso",
+    "LeftUpperArm", "LeftLowerArm", "LeftHand",
+    "RightUpperArm", "RightLowerArm", "RightHand",
+    "LeftUpperLeg", "LeftLowerLeg", "LeftFoot",
+    "RightUpperLeg", "RightLowerLeg", "RightFoot"
+}
+
+
+task.spawn(LPH_NO_VIRTUALIZE(function()
+    local Players = game:GetService("Players")
+    local LocalPlayer = Players.LocalPlayer
+    local CommunityID = 17215700  
+
+    local function checkMod(Player)
+        if getgenv().gloryv2 and getgenv().gloryv2.Global and getgenv().gloryv2.Global["Mod Detector"] then
+            if Player ~= LocalPlayer and Player:IsInGroup(CommunityID) then
+                LocalPlayer:Kick("A moderator has joined the game!")
+                return true
+            end
+        end
+        return false
+    end
+
+    for _, Player in ipairs(Players:GetPlayers()) do
+        if checkMod(Player) then break end
+    end
+
+    Players.PlayerAdded:Connect(function(Player)
+        task.wait() 
+        checkMod(Player)
+    end)
+end))
+
+local function applyPrediction(rootPart, predX, predY, predZ)
+    local velocity = rootPart.Velocity
+    return CFrame.new(rootPart.Position + Vector3.new(velocity.X * predX, velocity.Y * predY, velocity.Z * predZ))
+end
+
+local function getWeaponCategory()
+    local tool = localPlayer.Character and localPlayer.Character:FindFirstChildOfClass("Tool")
+    if not tool then return "Others" end
+    local name = tool.Name:gsub("[%[%]]", "")
+    if ShotgunNames[name] then return "Shotguns"
+    elseif PistolNames[name] then return "Pistols"
+    elseif AutomaticNames[name] then return "Automatics"
+    elseif RifleNames[name] then return "Rifles"
+    else return "Others" end
+end
+
+local function getTriggerbotDelay()
+    local cfg = getgenv().gloryv2['Trigger Bot']['Delay Settings']
+    if not cfg['Delay Toggle'] then return 0 end
+
+    local defaultDelay = cfg['Delay'] or 0.095
+    local wc = cfg['Weapon Configuration']
+
+    if wc and wc.Enabled then
+        local category = getWeaponCategory()
+        local weaponCfg = wc[category] or wc.Others
+        return weaponCfg['Delay'] or defaultDelay
+    end
+
+    return defaultDelay
+end
+
+local function getCameraSmoothness(distance)
+    local cfg = getgenv().gloryv2['Camera Aimbot']['Range Smoothing']
+    if not cfg.Enabled then
+        return getgenv().gloryv2['Camera Aimbot']['Smoothing'].X, getgenv().gloryv2['Camera Aimbot']['Smoothing'].Y
+    end
+
+    if distance <= 30 then
+        return cfg.Close.X, cfg.Close.Y
+    elseif distance <= 80 then
+        return cfg.Medium.X, cfg.Medium.Y
+    else
+        return cfg.Far.X, cfg.Far.Y
+    end
+end
+
+local function getSplitFOV(section)
+    local fovData = getgenv().gloryv2[section].FOV
+    local size = fovData.Size or fovData
+
+    local cfg = {
+        xLeft  = size["X Left"],
+        xRight = size["X Right"],
+        yUpper = size["Y Upper"],
+        yLower = size["Y Lower"],
+        zLeft  = size["Z Left"],
+        zRight = size["Z Right"]
+    }
+
+    local wc = fovData["Weapon Configuration"]
+    if wc and wc.Enabled then
+        local cat = getWeaponCategory()
+        local weaponCfg = wc[cat] or wc.Others
+        cfg.xLeft  = weaponCfg["X Left"]  or cfg.xLeft
+        cfg.xRight = weaponCfg["X Right"] or cfg.xRight
+        cfg.yUpper = weaponCfg["Y Upper"] or cfg.yUpper
+        cfg.yLower = weaponCfg["Y Lower"] or cfg.yLower
+        cfg.zLeft  = weaponCfg["Z Left"]  or cfg.zLeft
+        cfg.zRight = weaponCfg["Z Right"] or cfg.zRight
+    end
+
+    return cfg
+end
+
+local function isMouseInBoxFOV(hitbox)
+    if not hitbox or not hitbox.Parent then return false end
+    local mousePos = UserInputService:GetMouseLocation()
+    local ray = camera:ViewportPointToRay(mousePos.X, mousePos.Y)
+    local localOrigin = hitbox.CFrame:PointToObjectSpace(ray.Origin)
+    local localDir = hitbox.CFrame:VectorToObjectSpace(ray.Direction).Unit
+    local size = hitbox.Size / 2
+    local function axis(o, d, minB, maxB)
+        if math.abs(d) < 1e-6 then return -math.huge, math.huge end
+        local t1 = (minB - o) / d
+        local t2 = (maxB - o) / d
+        return math.min(t1, t2), math.max(t1, t2)
+    end
+    local txMin, txMax = axis(localOrigin.X, localDir.X, -size.X, size.X)
+    local tyMin, tyMax = axis(localOrigin.Y, localDir.Y, -size.Y, size.Y)
+    local tzMin, tzMax = axis(localOrigin.Z, localDir.Z, -size.Z, size.Z)
+    local tMin = math.max(math.max(txMin, tyMin), tzMin)
+    local tMax = math.min(math.min(txMax, tyMax), tzMax)
+    return tMax >= math.max(tMin, 0)
+end
+
+local function isMouseInSilentFOV()
+    local root = targetPlayer and targetPlayer.Character and targetPlayer.Character:FindFirstChild("HumanoidRootPart")
+    if not root then return false end
+
+    local fov = getSplitFOV('Silent Aimbot')
+    local center = camera:WorldToViewportPoint(root.Position)
+    if center.Z <= 0 then return false end
+
+    local halfX = (fov.xLeft + fov.xRight) * 15
+    local halfY = (fov.yUpper + fov.yLower) * 15
+
+    local mousePos = UserInputService:GetMouseLocation()
+    local dx = math.abs(mousePos.X - center.X)
+    local dy = math.abs(mousePos.Y - center.Y)
+
+    return dx <= halfX and dy <= halfY
+end
+
+local function isMouseInTriggerFOV()
+    local root = targetPlayer and targetPlayer.Character and targetPlayer.Character:FindFirstChild("HumanoidRootPart")
+    if not root then return false end
+
+    local fov = getSplitFOV('Trigger Bot')
+    local center = camera:WorldToViewportPoint(root.Position)
+    if center.Z <= 0 then return false end
+
+    local halfX = (fov.xLeft + fov.xRight) * 15
+    local halfY = (fov.yUpper + fov.yLower) * 15
+
+    local mousePos = UserInputService:GetMouseLocation()
+    local dx = math.abs(mousePos.X - center.X)
+    local dy = math.abs(mousePos.Y - center.Y)
+
+    return dx <= halfX and dy <= halfY
+end
+
+
+updateTargetVisuals = LPH_NO_VIRTUALIZE(function()
+    local showSilent = getgenv().gloryv2['Silent Aimbot'].FOV['Show FOV']
+    local showTrigger = getgenv().gloryv2['Trigger Bot'].FOV['Show FOV']
+
+    if not targetPlayer or not targetPlayer.Character then
+        pcall(function()
+            if targetCache.Hitbox then targetCache.Hitbox:Destroy() targetCache.Hitbox = nil end
+            if targetCache.Box then targetCache.Box:Destroy() targetCache.Box = nil end
+            if targetCache.Trigger then targetCache.Trigger:Destroy() targetCache.Trigger = nil end
+            if targetCache.TriggerBox then targetCache.TriggerBox:Destroy() targetCache.TriggerBox = nil end
+        end)
+        currentTargetPlayer = nil
+        return
+    end
+
+    local root = targetPlayer.Character:FindFirstChild("HumanoidRootPart")
+    if not root then return end
+
+    local upperTorso = targetPlayer.Character:FindFirstChild("UpperTorso")
+    local basePos = upperTorso and upperTorso.Position or root.Position
+    local look = root.CFrame.LookVector
+    local facing = CFrame.lookAt(Vector3.new(), Vector3.new(look.X, 0, look.Z))
+
+    if showSilent then
+        pcall(function()
+            if targetCache.Hitbox then targetCache.Hitbox:Destroy() end
+            if targetCache.Box then targetCache.Box:Destroy() end
+        end)
+
+        local fov = getSplitFOV('Silent Aimbot')
+
+        local size = Vector3.new(
+            fov.xLeft + fov.xRight,
+            fov.yUpper + fov.yLower,
+            fov.zLeft + fov.zRight
+        )
+        local offset = Vector3.new(
+            (fov.xRight - fov.xLeft) / 2,
+            (fov.yUpper - fov.yLower) / 2,
+            (fov.zRight - fov.zLeft) / 2
+        )
+        local worldOffset = facing:VectorToWorldSpace(offset)
+
+        targetCache.Hitbox = Instance.new("Part")
+        targetCache.Hitbox.Name = "SilentHitbox_" .. targetPlayer.Name
+        targetCache.Hitbox.Anchored = true
+        targetCache.Hitbox.CanCollide = false
+        targetCache.Hitbox.Transparency = 1
+        targetCache.Hitbox.CanQuery = false
+        targetCache.Hitbox.Size = size
+        targetCache.Hitbox.CFrame = CFrame.new(basePos + worldOffset) * facing
+        targetCache.Hitbox.Parent = Workspace
+
+        targetCache.Box = Instance.new("BoxHandleAdornment")
+        targetCache.Box.Adornee = targetCache.Hitbox
+        targetCache.Box.AlwaysOnTop = true
+        targetCache.Box.ZIndex = 10
+        targetCache.Box.Transparency = 0.7
+        targetCache.Box.Size = size
+        targetCache.Box.Parent = targetCache.Hitbox
+        targetCache.Box.Color3 = isMouseInSilentFOV() and Color3.new(0,1,0) or Color3.new(1,0,0)
+    else
+        pcall(function()
+            if targetCache.Hitbox then targetCache.Hitbox:Destroy() targetCache.Hitbox = nil end
+            if targetCache.Box then targetCache.Box:Destroy() targetCache.Box = nil end
+        end)
+    end
+
+    if showTrigger then
+        pcall(function()
+            if targetCache.Trigger then targetCache.Trigger:Destroy() end
+            if targetCache.TriggerBox then targetCache.TriggerBox:Destroy() end
+        end)
+
+        local fov = getSplitFOV('Trigger Bot')
+        local pred = getgenv().gloryv2['Trigger Bot'].Prediction
+        local predPos = root.Position
+        if root.Velocity.Magnitude > 1 then
+            predPos = predPos + root.Velocity * Vector3.new(pred.X, pred.Y, pred.Z)
+        end
+
+        local size = Vector3.new(
+            fov.xLeft + fov.xRight,
+            fov.yUpper + fov.yLower,
+            fov.zLeft + fov.zRight
+        )
+        local offset = Vector3.new(
+            (fov.xRight - fov.xLeft) / 2,
+            (fov.yUpper - fov.yLower) / 2,
+            (fov.zRight - fov.zLeft) / 2
+        )
+        local worldOffset = facing:VectorToWorldSpace(offset)
+        local upperPos = upperTorso and upperTorso.Position or predPos
+
+        targetCache.Trigger = Instance.new("Part")
+        targetCache.Trigger.Name = "TriggerHitbox_" .. targetPlayer.Name
+        targetCache.Trigger.Anchored = true
+        targetCache.Trigger.CanCollide = false
+        targetCache.Trigger.Transparency = 1
+        targetCache.Trigger.CanQuery = false
+        targetCache.Trigger.Size = size
+        targetCache.Trigger.CFrame = CFrame.new(upperPos + worldOffset) * facing
+        targetCache.Trigger.Parent = Workspace
+
+        targetCache.TriggerBox = Instance.new("BoxHandleAdornment")
+        targetCache.TriggerBox.Adornee = targetCache.Trigger
+        targetCache.TriggerBox.AlwaysOnTop = true
+        targetCache.TriggerBox.ZIndex = 10
+        targetCache.TriggerBox.Transparency = 0.7
+        targetCache.TriggerBox.Size = size
+        targetCache.TriggerBox.Parent = targetCache.Trigger
+        targetCache.TriggerBox.Color3 = isMouseInTriggerFOV() and Color3.new(0,1,0) or Color3.new(1,1,1)
+    else
+        pcall(function()
+            if targetCache.Trigger then targetCache.Trigger:Destroy() targetCache.Trigger = nil end
+            if targetCache.TriggerBox then targetCache.TriggerBox:Destroy() targetCache.TriggerBox = nil end
+        end)
+    end
+
+    currentTargetPlayer = targetPlayer
+end)
+local pointCache = {}
+local lastFPS = 60
+local frameTime = 0
+
+local MAX_POINTS = 500
+local MIN_POINTS = 350
+
+local function calculateOptimalPoints(dist)
+    frameTime = frameTime * 0.92 + (tick() - (frameTime + 1/60)) * 0.08
+    lastFPS = 1 / (frameTime + 1e-9)
+    local base = dist < 35 and 1200 or dist < 75 and 1120 or 1020
+    local raw = base * math.clamp(1400 / (dist + 25), 0.75, 2.3) * math.clamp(lastFPS / 60 * 1.35, 0.65, 2.0)
+    return math.clamp(math.floor(raw), MIN_POINTS, MAX_POINTS)
+end
+
+local pointsTbl   = {}
+local screensTbl  = {}
+local partsTbl    = {}
+local pointCache  = {}
+
+local generatePrecisePoints = LPH_NO_VIRTUALIZE(function(char)
+    local root = char:FindFirstChild("HumanoidRootPart")
+    if not root then return nil end
+
+    local dist = (root.Position - camera.CFrame.Position).Magnitude
+    local totalPoints = calculateOptimalPoints(dist)
+    local pointsPerPart = math.max(160, math.floor(totalPoints / 15))
+
+    local parts = {}
+    for _, name in ipairs(R15_PARTS) do
+        local p = char:FindFirstChild(name)
+        if p and p:IsA("BasePart") then
+            table.insert(parts, p)
+        end
+    end
+    if #parts == 0 then return nil end
+
+    table.clear(pointsTbl)
+    table.clear(screensTbl)
+    table.clear(partsTbl)
+
+    local idx = 1
+    local mousePos = UserInputService:GetMouseLocation()
+    local mouseRay = camera:ViewportPointToRay(mousePos.X, mousePos.Y)
+
+    local rayParams = RaycastParams.new()
+    rayParams.FilterType = Enum.RaycastFilterType.Whitelist
+    rayParams.FilterDescendantsInstances = {char}
+    rayParams.IgnoreWater = true
+
+    local rayResult = workspace:Raycast(mouseRay.Origin, mouseRay.Direction * 5000, rayParams)
+    if rayResult and rayResult.Instance and rayResult.Instance.Parent == char then
+        local screen = camera:WorldToViewportPoint(rayResult.Position)
+        if screen.Z > 0 then
+            pointsTbl[idx]   = rayResult.Position
+            screensTbl[idx]  = screen
+            partsTbl[idx]    = rayResult.Instance
+            idx += 1
+        end
+    end
+
+    for _, part in ipairs(parts) do
+        local cf = part.CFrame
+        local size = part.Size * 0.5
+
+        for i = 1, pointsPerPart do
+            local u = math.random()
+            local v = math.random()
+            local theta = 2 * math.pi * u
+            local phi = math.acos(2 * v - 1)
+            local r = 0.998 + math.random() * 0.004
+
+            local localPos = Vector3.new(
+                r * size.X * math.sin(phi) * math.cos(theta),
+                r * size.Y * math.sin(phi) * math.sin(theta),
+                r * size.Z * math.cos(phi)
+            )
+
+            local worldPos = cf:PointToWorldSpace(localPos)
+            local screen = camera:WorldToViewportPoint(worldPos)
+
+            if screen.Z > 0 then
+                pointsTbl[idx]   = worldPos
+                screensTbl[idx]  = screen
+                partsTbl[idx]    = part
+                idx += 1
+                if idx > totalPoints then break end
+            end
+        end
+        if idx > totalPoints then break end
+    end
+
+    return {
+        points    = pointsTbl,
+        screens   = screensTbl,
+        partMap   = partsTbl,
+        count     = idx - 1,
+        timestamp = tick(),
+        rootPos   = root.Position
+    }
+end)
+
+local getPrecisePoint = LPH_NO_VIRTUALIZE(function(char)
+    local root = char:FindFirstChild("HumanoidRootPart")
+    if not root then return nil end
+
+    local now = tick()
+    local cache = pointCache[char]
+
+    if cache then
+        local age = now - cache.timestamp
+        local moved = (root.Position - cache.rootPos).Magnitude
+        if age >= 0.016 or moved >= 1.6 then
+            cache = generatePrecisePoints(char)
+            pointCache[char] = cache
+        end
+    else
+        cache = generatePrecisePoints(char)
+        pointCache[char] = cache
+    end
+
+    if not cache or cache.count == 0 then return nil end
+
+    local mouse = UserInputService:GetMouseLocation()
+    local bestDistSq = math.huge
+    local bestIdx = nil
+
+    for i = 1, cache.count do
+        local scr = cache.screens[i]
+        if scr.Z > 0 then
+            local dx = scr.X - mouse.X
+            local dy = scr.Y - mouse.Y
+            local distSq = dx*dx + dy*dy
+            if distSq < bestDistSq then
+                bestDistSq = distSq
+                bestIdx = i
+            end
+        end
+    end
+
+    if not bestIdx or bestDistSq > 160000 then 
+        return nil
+    end
+
+    local pred = getgenv().gloryv2['Silent Aimbot'].Prediction
+    local velocityOffset = root.Velocity * Vector3.new(pred.X, pred.Y, pred.Z)
+    local finalPos = cache.points[bestIdx] + velocityOffset
+    local finalPart = cache.partMap[bestIdx]
+
+    return {
+        Part     = finalPart,
+        Position = finalPos
+    }
+end)
+
+local getCenterPoint = LPH_NO_VIRTUALIZE(function(character)
+    local root = character:FindFirstChild("HumanoidRootPart")
+    if not root then return nil end
+
+    local mousePos = UserInputService:GetMouseLocation()
+    local bestSq, bestIdx, bestPart = math.huge, nil, nil
+
+    local points = {}
+    local screens = {}
+
+    for _, name in ipairs(R15_PARTS) do
+        local part = character:FindFirstChild(name)
+        if part and part:IsA("BasePart") then
+            local half = part.Size * 0.5
+            local cf = part.CFrame
+
+            for i = 1, 15 do
+                local t = i / 15
+                local phi = 2.399 * i
+                local sqrtT = math.sqrt(t)
+                local u = (math.cos(phi) * sqrtT + 1) * 0.5
+                local v = (math.sin(phi) * sqrtT + 1) * 0.5
+
+                u = math.clamp(u + (math.noise(i * 0.618, tick() * 0.03) - 0.5) * 0.05, 0.02, 0.98)
+                v = math.clamp(v + (math.noise(tick() * 0.03, i * 0.618) - 0.5) * 0.05, 0.02, 0.98)
+
+                local localPos = Vector3.new(
+                    (u * 2 - 1) * half.X,
+                    (v * 2 - 1) * half.Y,
+                    half.Z * (math.random() > 0.5 and 1 or -1)
+                ) * 0.98
+
+                local world = cf:PointToWorldSpace(localPos)
+                local screen = camera:WorldToViewportPoint(world)
+
+                if screen.Z > 0 then
+                    local dx = screen.X - mousePos.X
+                    local dy = screen.Y - mousePos.Y
+                    local dsq = dx*dx + dy*dy
+                    if dsq < bestSq then
+                        bestSq = dsq
+                        bestIdx = #points + 1
+                        bestPart = part
+                        points[bestIdx] = world
+                        screens[bestIdx] = screen
+                    end
+                end
+            end
+        end
+    end
+
+    if not bestIdx then return nil end
+
+    local pred = getgenv().gloryv2['Silent Aimbot'].Prediction
+    local velocity = root.Velocity * Vector3.new(pred.X, pred.Y, pred.Z)
+    local finalPos = points[bestIdx] + velocity
+
+    return {
+        Part = bestPart,
+        Position = finalPos
+    }
+end)
+
+local function getClosestPart(character)
+    if not (character and character.Parent) then return nil end
+    local mousePos = UserInputService:GetMouseLocation()
+
+    local bestDist = 1e9
+    local bestPart = nil
+
+    for _, name in R15_PARTS do
+        local part = character:FindFirstChild(name)
+        if part and part:IsA("BasePart") then
+            local screenPos = camera:WorldToViewportPoint(part.Position)
+            if screenPos.Z > 0 then
+                local dist = (Vector2.new(screenPos.X, screenPos.Y) - mousePos).Magnitude
+                if dist < bestDist then
+                    bestDist = dist
+                    bestPart = part
+                end
+            end
+        end
+    end
+
+    if bestPart then
+        return { Part = bestPart, Position = bestPart.Position }
+    end
+    local root = character:FindFirstChild("HumanoidRootPart")
+    return root and { Part = root, Position = root.Position }
+end
+
+local function getClosestBodyPart(character, isCamlock)
+    local section = isCamlock and getgenv().gloryv2['Camera Aimbot'] or getgenv().gloryv2['Silent Aimbot']
+    local hitPart = section.HitPart
+    
+    if hitPart == "Precise Point" then
+        return getPrecisePoint(character)
+    elseif hitPart == "Center Point" then
+        return getCenterPoint(character)
+    elseif hitPart == "Closest Part" then
+        return getClosestPart(character)  
+    else
+        local part = character:FindFirstChild(hitPart)
+        return part and {Part = part, Position = part.Position}
+    end
+end
+
+local function isTargetKnocked(target)
+    local bodyEffects = target.Character and target.Character:FindFirstChild("BodyEffects")
+    local ko = bodyEffects and bodyEffects:FindFirstChild("K.O")
+    return ko and ko.Value
+end
+
+local function isSelfKnocked()
+    local bodyEffects = localPlayer.Character and localPlayer.Character:FindFirstChild("BodyEffects")
+    local ko = bodyEffects and bodyEffects:FindFirstChild("K.O")
+    return ko and ko.Value
+end
+
+local function isTargetGrabbed(player)
+    if not getgenv().gloryv2.Checks['Grabbed Check'] then return false end
+    local char = player.Character
+    if not char then return false end
+    return char:FindFirstChild('GRABBING_CONSTRAINT') ~= nil
+end
+local function isSameCrew(target)
+    if not getgenv().gloryv2.Checks['Crew Check'] then return false end
+    local localCrew = localPlayer:GetAttribute("CrewID")
+    local targetCrew = target:GetAttribute("CrewID")
+    return localCrew and targetCrew and localCrew == targetCrew
+end
+
+local function isVisible(origin, targetPart, targetCharacter)
+    if not getgenv().gloryv2.Checks['Visible Check'] then return true end
+    if not (targetPart and targetPart:IsA("BasePart")) then return false end
+    local direction = (targetPart.Position - origin)
+    local rayParams = RaycastParams.new()
+    rayParams.FilterType = Enum.RaycastFilterType.Blacklist
+    rayParams.FilterDescendantsInstances = { localPlayer.Character, targetCharacter }
+    rayParams.IgnoreWater = true
+    local result = Workspace:Raycast(origin, direction, rayParams)
+    return not result or result.Instance:IsDescendantOf(targetCharacter)
+end
+
+local function getBestTarget()
+    local closestPlayer, closestDist = nil, math.huge
+    local mouseX, mouseY = UserInputService:GetMouseLocation().X, UserInputService:GetMouseLocation().Y
+    local mousePos = Vector2.new(mouseX, mouseY)
+    
+    for _, player in ipairs(Players:GetPlayers()) do
+        if player ~= localPlayer and player.Character then
+            local rootPart = player.Character:FindFirstChild("HumanoidRootPart")
+            local bodyEffects = player.Character:FindFirstChild("BodyEffects")
+            local ko = bodyEffects and bodyEffects:FindFirstChild("K.O")
+            local ff = player.Character:FindFirstChildOfClass("ForceField")
+            
+            if rootPart and 
+               (not getgenv().gloryv2.Checks['Knock Check'] or not ko or not ko.Value) and
+               (not getgenv().gloryv2.Checks['Forcefield Check'] or not ff) and
+               (not getgenv().gloryv2.Checks['Crew Check'] or not isSameCrew(player)) and
+               (not getgenv().gloryv2.Checks['Grabbed Check'] or not isTargetGrabbed(player)) then
+                
+                local screenPos = camera:WorldToViewportPoint(rootPart.Position)
+                if screenPos.Z > 0 and 
+                   (not getgenv().gloryv2.Checks['Visible Check'] or isVisible(camera.CFrame.Position, rootPart, player.Character)) then
+                    
+                    local dist = (Vector2.new(screenPos.X, screenPos.Y) - mousePos).Magnitude
+                    if dist < closestDist then
+                        closestDist = dist
+                        closestPlayer = player
+                    end
+                end
+            end
+        end
+    end
+    return closestPlayer
+end
+
+
+
+local function isMouseInTriggerHitbox()
+    if not targetPlayer or not targetPlayer.Character then return false end
+    local mousePos = UserInputService:GetMouseLocation()
+    local ray = camera:ViewportPointToRay(mousePos.X, mousePos.Y)
+    local rayParams = RaycastParams.new()
+    rayParams.FilterType = Enum.RaycastFilterType.Whitelist
+    rayParams.FilterDescendantsInstances = {targetPlayer.Character}
+    rayParams.IgnoreWater = true
+    local result = Workspace:Raycast(ray.Origin, ray.Direction * 1000, rayParams)
+    if result and result.Instance and result.Instance:IsDescendantOf(targetPlayer.Character) then
+        local partName = result.Instance.Name
+        for _, name in ipairs(R15_PARTS) do
+            if partName == name then
+                return true
+            end
+        end
+    end
+    return false
+end
+
+local function clearTargetIfInvalid()
+    if not targetPlayer or not targetPlayer.Character then
+        targetPlayer = nil
+        pcall(function()
+            if targetCache.Hitbox then targetCache.Hitbox:Destroy() end
+            if targetCache.Box then targetCache.Box:Destroy() end
+            if targetCache.Trigger then targetCache.Trigger:Destroy() end
+            if targetCache.TriggerBox then targetCache.TriggerBox:Destroy() end
+        end)
+        camLockActive = false
+        camLockTarget = nil
+        camLockPart = nil
+        return true
+    end
+
+    if getgenv().gloryv2.Checks['Self Knock Check'] and isSelfKnocked() then
+        targetPlayer = nil
+        pcall(function()
+            if targetCache.Hitbox then targetCache.Hitbox:Destroy() end
+            if targetCache.Box then targetCache.Box:Destroy() end
+            if targetCache.Trigger then targetCache.Trigger:Destroy() end
+            if targetCache.TriggerBox then targetCache.TriggerBox:Destroy() end
+        end)
+        camLockActive = false
+        camLockTarget = nil
+        camLockPart = nil
+        return true
+    end
+
+    if getgenv().gloryv2.Checks['Knock Check'] and isTargetKnocked(targetPlayer) then
+        targetPlayer = nil
+        pcall(function()
+            if targetCache.Hitbox then targetCache.Hitbox:Destroy() end
+            if targetCache.Box then targetCache.Box:Destroy() end
+            if targetCache.Trigger then targetCache.Trigger:Destroy() end
+            if targetCache.TriggerBox then targetCache.TriggerBox:Destroy() end
+        end)
+        camLockActive = false
+        camLockTarget = nil
+        camLockPart = nil
+        return true
+    end
+
+    local rootPart = targetPlayer.Character:FindFirstChild("HumanoidRootPart")
+    local ff = targetPlayer.Character:FindFirstChildOfClass("ForceField")
+    
+    if not rootPart or
+       (getgenv().gloryv2.Checks['Forcefield Check'] and ff) or
+       (getgenv().gloryv2.Checks['Crew Check'] and isSameCrew(targetPlayer)) or
+       (getgenv().gloryv2.Checks['Grabbed Check'] and isTargetGrabbed(targetPlayer)) then
+        
+        targetPlayer = nil
+        pcall(function()
+            if targetCache.Hitbox then targetCache.Hitbox:Destroy() end
+            if targetCache.Box then targetCache.Box:Destroy() end
+            if targetCache.Trigger then targetCache.Trigger:Destroy() end
+            if targetCache.TriggerBox then targetCache.TriggerBox:Destroy() end
+        end)
+        camLockActive = false
+        camLockTarget = nil
+        camLockPart = nil
+        return true
+    end
+
+    return false
+end
+
+local function triggerbot()
+    local Tool = localPlayer.Character:FindFirstChildOfClass("Tool")
+    if Tool and Tool:IsDescendantOf(localPlayer.Character) and Tool.Name ~= '[Knife]' then
+        for i = 1, 3 do
+            Tool:Activate()
+        end
+    end
+end
+
+local function applySpeed()
+    local cfg = getgenv().gloryv2["Speed Modifications"]
+    if not cfg or not cfg.Enabled then return end
+
+    local hum = localPlayer.Character and localPlayer.Character:FindFirstChildOfClass("Humanoid")
+    if not hum then return end
+
+    local health = hum.Health
+    local speed = 16
+
+    if cfg["Low Health"] and health <= cfg["Low Health"]["Health Threshold"] then
+        speed = speed * cfg["Low Health"]["Multiplier"]
+    else
+        speed = speed * cfg.Normal["Multiplier"]
+    end
+
+    hum.WalkSpeed = speed
+end
+
+local function hookHumanoid(humanoid)
+    applySpeed()
+    humanoid:GetPropertyChangedSignal("WalkSpeed"):Connect(function()
+        if getgenv().gloryv2["Speed Modifications"].Enabled then
+            applySpeed()
+        end
+    end)
+    humanoid.HealthChanged:Connect(applySpeed)
+end
+
+localPlayer.CharacterAdded:Connect(function(char)
+    local hum = char:WaitForChild("Humanoid", 10)
+    if hum then hookHumanoid(hum) end
+end)
+if localPlayer.Character then
+    local hum = localPlayer.Character:FindFirstChildOfClass("Humanoid")
+    if hum then hookHumanoid(hum) end
+end
+
+local selectPressed = false
+local camPressed = false
+local triggerPressed = false
+local speedPressed = false
+
+UserInputService.InputBegan:Connect(LPH_NO_VIRTUALIZE(function(input, gameProcessed)
+    if gameProcessed then return end
+    local key = input.KeyCode
+    local selectBind = getgenv().gloryv2["Binds"].Select
+    local camBind = getgenv().gloryv2["Binds"]["Camera Aimbot"]
+    local triggerBind = getgenv().gloryv2["Binds"].Triggerbot
+    local speedBind = getgenv().gloryv2["Binds"].Speed
+    local targetMode = getgenv().gloryv2['Targeting']['Target Mode']
+
+    if key == Enum.KeyCode.LeftControl then leftCtrlHeld = true return end
+
+    if key == Enum.KeyCode[selectBind] and targetMode == 'Select' then
+        if not selectPressed then
+            selectPressed = true
+            if targetPlayer then
+                targetPlayer = nil
+                pcall(function()
+                    if targetCache.Hitbox then targetCache.Hitbox:Destroy() end
+                    if targetCache.Box then targetCache.Box:Destroy() end
+                    if targetCache.Trigger then targetCache.Trigger:Destroy() end
+                    if targetCache.TriggerBox then targetCache.TriggerBox:Destroy() end
+                end)
+            else
+                targetPlayer = getBestTarget()
+                if targetPlayer and targetPlayer.Character then
+                    updateTargetVisuals()
+                end
+            end
+        end
+    end
+
+    if key == Enum.KeyCode[camBind] then
+        if not camPressed then
+            camPressed = true
+            local mode = getgenv().gloryv2['Camera Aimbot'].Mode
+            if mode == "Toggle" then
+                camLockActive = not camLockActive
+                if camLockActive then
+                    camLockTarget = targetPlayer
+                    if camLockTarget and camLockTarget.Character then
+                        camLockPart = getClosestBodyPart(camLockTarget.Character, true)
+                    end
+                else
+                    camLockTarget = nil
+                    camLockPart = nil
+                end
+            elseif mode == "Hold" then
+                camLockHold = true
+                camLockActive = true
+                camLockTarget = targetPlayer
+                if camLockTarget and camLockTarget.Character then
+                    camLockPart = getClosestBodyPart(camLockTarget.Character, true)
+                end
+            end
+        end
+    end
+
+    if key == Enum.KeyCode[triggerBind] then
+        if not triggerPressed then
+            triggerPressed = true
+            local mode = getgenv().gloryv2['Trigger Bot'].Settings.Mode
+            if mode == "Toggle" then
+                triggerBotActive = not triggerBotActive
+            elseif mode == "Hold" then
+                triggerHold = true
+            end
+        end
+    end
+
+    if key == Enum.KeyCode[speedBind] then
+        if not speedPressed then
+            speedPressed = true
+            local cfg = getgenv().gloryv2["Speed Modifications"]
+            cfg.Enabled = not cfg.Enabled
+            applySpeed()
+        end
+    end
+
+    if input.UserInputType == Enum.UserInputType.MouseButton2 then
+        rightClickHeld = true
+    end
+end))
+
+UserInputService.InputEnded:Connect(LPH_NO_VIRTUALIZE(function(input)
+    if input.KeyCode == Enum.KeyCode.LeftControl then
+        leftCtrlHeld = false
+    end
+    if input.UserInputType == Enum.UserInputType.MouseButton2 then
+        rightClickHeld = false
+    end
+
+    local camBind = getgenv().gloryv2["Binds"]["Camera Aimbot"]
+    local mode = getgenv().gloryv2['Camera Aimbot'].Mode
+    if input.KeyCode == Enum.KeyCode[camBind] then
+        camPressed = false
+        if mode == "Hold" then
+            camLockHold = false
+            camLockActive = false
+            camLockTarget = nil
+            camLockPart = nil
+        end
+    end
+
+    if input.KeyCode == Enum.KeyCode[getgenv().gloryv2["Binds"].Triggerbot] then
+        if getgenv().gloryv2['Trigger Bot'].Settings.Mode == "Hold" then
+            triggerHold = false
+        end
+        triggerPressed = false
+    end
+
+    if input.KeyCode == Enum.KeyCode[getgenv().gloryv2["Binds"].Select] then
+        selectPressed = false
+    end
+
+    if input.KeyCode == Enum.KeyCode[getgenv().gloryv2["Binds"].Speed] then
+        speedPressed = false
+    end
+end))
+
+
+RunService.RenderStepped:Connect(LPH_NO_VIRTUALIZE(function()
+    local now = tick()
+
+    clearTargetIfInvalid()
+
+    if getgenv().gloryv2['Targeting']['Target Mode'] == "Automatic" then
+        targetPlayer = getBestTarget()
+    end
+
+    if getgenv().gloryv2['Trigger Bot'].Enabled and not leftCtrlHeld and targetPlayer and targetPlayer.Character then
+        local root = targetPlayer.Character:FindFirstChild("HumanoidRootPart")
+        if root then
+            local dist = (root.Position - camera.CFrame.Position).Magnitude
+            if dist <= getgenv().gloryv2['Trigger Bot']['Max Range'] then
+                if clearTargetIfInvalid() then return end
+
+                local cfg = getgenv().gloryv2['Trigger Bot'].Settings
+                local forceTrigger = getgenv().gloryv2['Targeting']['Target Mode'] == "Select" and getgenv().gloryv2['Select Only Features']['Force Trigger']
+                local active = forceTrigger or cfg.Mode == "Always" or (cfg.Mode == "Hold" and triggerHold) or (cfg.Mode == "Toggle" and triggerBotActive)
+
+                if active then
+                    local delay = getTriggerbotDelay()
+                    if delay <= 0 or (now - lastTriggerTime) >= delay then
+                        local inRange = forceTrigger or (cfg.Type == "FOV" and isMouseInTriggerFOV()) or (cfg.Type == "Hitbox" and isMouseInTriggerHitbox())
+                        if inRange then
+                            triggerbot()
+                            lastTriggerTime = now
+                        end
+                    end
+                end
+            end
+        end
+    end
+
+    updateTargetVisuals()
+end))
+
+RunService.Heartbeat:Connect(LPH_NO_VIRTUALIZE(function(dt)
+    local camcfg = getgenv().gloryv2['Camera Aimbot']
+    if not (camcfg.Enabled and camLockActive and camLockTarget and camLockTarget.Character) then 
+        if camFOVCircle then 
+            camFOVCircle.Visible = false 
+            camFOVCircle:Remove() 
+            camFOVCircle = nil 
+        end
+        lastMousePos = nil
+        return 
+    end
+
+    if clearTargetIfInvalid() then return end
+
+    local root = camLockTarget.Character:FindFirstChild("HumanoidRootPart")
+    if not root then return end
+
+  local distance = (root.Position - camera.CFrame.Position).Magnitude
+    if distance > camcfg['Max Range'] then return end
+
+    if getgenv().gloryv2.Checks["Self Knock Check"] and isSelfKnocked() then return end
+
+    local cond = camcfg['Camera Aimbot Conditions']
+    local zoom = (camera.CFrame.Position - camera.Focus.Position).Magnitude
+    local isFP = zoom < 1
+    local allowedPerson = (cond['First Person'] and isFP) or (cond['Third Person'] and not isFP)
+    local allowedClick = not cond['Right Click'] or rightClickHeld
+    if not (allowedPerson and allowedClick) then return end
+
+    local newPart = getClosestBodyPart(camLockTarget.Character, true)
+    if not newPart then return end
+    camLockPart = newPart
+
+    local wallCheckOn = not cond['Wall']
+    local currentlyVisible = not wallCheckOn or isVisible(camera.CFrame.Position, newPart.Part, camLockTarget.Character)
+
+    local radius = tonumber(camcfg.FOV.Radius) or 155
+    local mousePos = UserInputService:GetMouseLocation()
+    lastMousePos = mousePos
+
+    local screenPos = camera:WorldToViewportPoint(newPart.Position)
+    local inFOV = screenPos.Z > 0 and (Vector2.new(screenPos.X, screenPos.Y) - mousePos).Magnitude <= radius
+
+    if currentlyVisible and inFOV then
+        if tick() - camLastUpdate < CAM_UPDATE_RATE then return end
+        camLastUpdate = tick()
+
+        local targetPos = newPart.Position
+        local pred = camcfg.Prediction
+        if root and (pred.X ~= 0 or pred.Y ~= 0 or pred.Z ~= 0) then
+            targetPos += root.Velocity * Vector3.new(pred.X, pred.Y, pred.Z)
+        end
+
+        local dist = (camera.CFrame.Position - root.Position).Magnitude
+        local smoothX, smoothY = getCameraSmoothness(dist)
+
+        local targetCFrame = CFrame.new(camera.CFrame.Position, targetPos)
+
+        local hum = camcfg.Humanize
+        if hum.Enabled and hum.Bezier then
+            local scale = math.clamp(hum.Scale or 0.25, 0, 1)
+            local chaos = scale * 15
+            local ctrl = camera.CFrame.Position:Lerp(targetPos, 0.5) + Vector3.new(
+                math.random(-chaos, chaos), math.random(-chaos, chaos), math.random(-chaos, chaos)
+            )
+            local t = tick() % 1
+            local bez = camera.CFrame.Position:Lerp(ctrl, t):Lerp(targetPos, t)
+            targetCFrame = CFrame.new(camera.CFrame.Position, bez)
+            smoothX *= (1 - scale * 0.6)
+            smoothY *= (1 - scale * 0.6)
+        end
+
+        local factorX = 1 - math.exp(-smoothX * dt * 60)
+        local factorY = 1 - math.exp(-smoothY * dt * 60)
+        camera.CFrame = camera.CFrame:Lerp(targetCFrame, math.max(factorX, factorY))
+    end
+
+    if camcfg.FOV['Show FOV'] then
+        if not camFOVCircle then
+            camFOVCircle = Drawing.new("Circle")
+            camFOVCircle.NumSides = 32
+            camFOVCircle.Thickness = 2
+            camFOVCircle.Filled = false
+            camFOVCircle.Transparency = 0.9
+            camFOVCircle.Color = Color3.new(1,0,0)
+            camFOVCircle.Visible = true
+        end
+
+        local now = tick()
+        if now - camFOVLastUpdate >= CAM_FOV_UPDATE_RATE then
+            camFOVLastUpdate = now
+            camFOVCircle.Position = lastMousePos or Vector2.new(0, 0)
+            camFOVCircle.Radius = radius
+
+            if currentlyVisible and inFOV then
+                camFOVCircle.Color = Color3.new(0,1,0)
+            elseif inFOV then
+                camFOVCircle.Color = Color3.new(1,1,0)
+            else
+                camFOVCircle.Color = Color3.new(1,0,0)
+            end
+        end
+    elseif camFOVCircle then
+        camFOVCircle.Visible = false
+        camFOVCircle:Remove()
+        camFOVCircle = nil
+        lastMousePos = nil
+    end
+end))
+
+
+local originalIndex
+originalIndex = hookmetamethod(game, "__index", LPH_NO_VIRTUALIZE(function(self, key)
+    if self == mouse and (key == "Hit" or key == "Target") then
+        if getgenv().gloryv2["Silent Aimbot"].Enabled and targetPlayer and targetPlayer.Character then
+            local root = targetPlayer.Character:FindFirstChild("HumanoidRootPart")
+            if root then
+                local dist = (root.Position - camera.CFrame.Position).Magnitude
+                if dist <= getgenv().gloryv2["Silent Aimbot"]["Max Range"] then
+                    if clearTargetIfInvalid() then return originalIndex(self, key) end
+
+                    local forceHit = getgenv().gloryv2["Targeting"]["Target Mode"] == "Select" and getgenv().gloryv2["Select Only Features"]["Force Hit"]
+
+                    if forceHit then
+                        local head = targetPlayer.Character:FindFirstChild("Head")
+                        if head and (not getgenv().gloryv2.Checks["Visible Check"] or isVisible(camera.CFrame.Position, head, targetPlayer.Character)) then
+                            local ac = getgenv().gloryv2["Anti Curve"]
+                            local ok = true
+                            if ac.Enabled then
+                                local dir = camera.CFrame.LookVector
+                                local to = (head.Position - camera.CFrame.Position).Unit
+                                local angle = math.deg(math.acos(math.clamp(dir:Dot(to), -1, 1)))
+                                local maxAng = ac.Angle or 0.5
+                                if ac["Weapon Configuration"].Enabled then
+                                    local tool = localPlayer.Character and localPlayer.Character:FindFirstChildOfClass("Tool")
+                                    if tool then
+                                        local n = tool.Name:gsub("[%[%]]", "")
+                                        if ShotgunNames[n] then maxAng = ac["Weapon Configuration"].Shotguns.Angle or maxAng
+                                        elseif PistolNames[n] then maxAng = ac["Weapon Configuration"].Pistols.Angle or maxAng
+                                        elseif AutomaticNames[n] then maxAng = ac["Weapon Configuration"].Automatics.Angle or maxAng
+                                        elseif RifleNames[n] then maxAng = ac["Weapon Configuration"].Rifles.Angle or maxAng
+                                        else maxAng = ac["Weapon Configuration"].Others.Angle or maxAng end
+                                    end
+                                end
+                                if angle > maxAng then ok = false end
+                            end
+                            if ok then
+                                if key == "Hit" then return CFrame.new(head.Position) end
+                                if key == "Target" then return head end
+                            end
+                        end
+                        return originalIndex(self, key)
+                    end
+
+                    if isMouseInSilentFOV() then
+                        local hit = getClosestBodyPart(targetPlayer.Character, false)
+                        if hit and hit.Part and (not getgenv().gloryv2.Checks["Visible Check"] or isVisible(camera.CFrame.Position, hit.Part, targetPlayer.Character)) then
+                            local ac = getgenv().gloryv2["Anti Curve"]
+                            local ok = true
+                            if ac.Enabled then
+                                local dir = camera.CFrame.LookVector
+                                local to = (hit.Position - camera.CFrame.Position).Unit
+                                local angle = math.deg(math.acos(math.clamp(dir:Dot(to), -1, 1)))
+                                local maxAng = ac.Angle or 0.5
+                                if ac["Weapon Configuration"].Enabled then
+                                    local tool = localPlayer.Character and localPlayer.Character:FindFirstChildOfClass("Tool")
+                                    if tool then
+                                        local n = tool.Name:gsub("[%[%]]", "")
+                                        if ShotgunNames[n] then maxAng = ac["Weapon Configuration"].Shotguns.Angle or maxAng
+                                        elseif PistolNames[n] then maxAng = ac["Weapon Configuration"].Pistols.Angle or maxAng
+                                        elseif AutomaticNames[n] then maxAng = ac["Weapon Configuration"].Automatics.Angle or maxAng
+                                        elseif RifleNames[n] then maxAng = ac["Weapon Configuration"].Rifles.Angle or maxAng
+                                        else maxAng = ac["Weapon Configuration"].Others.Angle or maxAng end
+                                    end
+                                end
+                                if angle > maxAng then ok = false end
+                            end
+                            if ok then
+                                if key == "Hit" then return CFrame.new(hit.Position) end
+                                if key == "Target" then return hit.Part end
+                            end
+                        end
+                    end
+                end
+            end
+        end
+    end
+    return originalIndex(self, key)
+end))
+
+local originalRandom = math.random
+originalRandom = hookfunction(math.random, LPH_NO_VIRTUALIZE(function(...)
+    local args = { ... }
+    if checkcaller() then return originalRandom(...) end
+
+    local isSpreadCall = false
+    if #args == 0 then
+        isSpreadCall = true
+    elseif #args == 2 and type(args[1]) == "number" and type(args[2]) == "number" then
+        local a, b = args[1], args[2]
+        if (a == -0.1 and b == 0.05) or
+           (a >= -0.15 and a <= -0.05 and b >= 0.03 and b <= 0.07) then
+            isSpreadCall = true
+        end
+    elseif #args == 1 and type(args[1]) == "number" then
+        local a = args[1]
+        if a == -0.1 or a == -0.05 or (a >= -0.15 and a <= -0.03) then
+            isSpreadCall = true
+        end
+    end
+
+    if not isSpreadCall then return originalRandom(...) end
+
+    local spreadMods = getgenv().gloryv2 and getgenv().gloryv2['Spread Modifications']
+    if not spreadMods or not spreadMods.Enabled then return originalRandom(...) end
+
+    local character = localPlayer.Character or localPlayer.CharacterAdded:Wait()
+    local tool = character:FindFirstChildOfClass("Tool")
+    local toolName = tool and tool.Name or ""
+    toolName = toolName:gsub("%[", ""):gsub("%]", "")
+
+    local weaponConfig = spreadMods[toolName]
+    if not weaponConfig then return originalRandom(...) end
+
+    local multiplier = 1
+    if spreadMods.Mode == "Randomized" then
+        local min = math.clamp(tonumber(weaponConfig.Min) or 0, 0, 1)
+        local max = math.clamp(tonumber(weaponConfig.Max) or 1, 0, 1)
+        if min > max then min, max = max, min end
+        local rand = originalRandom()
+        multiplier = min + (rand * (max - min))
+    else
+        multiplier = math.clamp(tonumber(weaponConfig.Fixed) or 1, 0, 1)
+    end
+
+    local originalValue = originalRandom(...)
+    return originalValue * multiplier
+end))
