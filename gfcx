@@ -1,0 +1,216 @@
+-- Configuration File
+-- Save this as Config.lua
+
+local Config = {}
+
+Config.Global = {
+    ["Mod Detector"] = true,
+    ["Key"] = "SjmSwqzoyfjpuuZlJfTZqLxuvwyMKmEU"
+}
+
+Config.Binds = {
+    ['Select'] = "C",
+    ['Camera Aimbot'] = "C",
+    ['Triggerbot'] = "C",
+    ['Speed'] = "V"
+}
+
+Config.Targeting = {
+    ['Target Mode'] = 'Automatic' -- Automatic // Select
+}
+
+Config.SelectOnlyFeatures = {
+    ['Force Hit'] = true,
+    ['Force Trigger'] = true
+}
+
+Config.Checks = {
+    ['Visible Check'] = true,
+    ['Knock Check'] = true,
+    ['Crew Check'] = true,
+    ['Grabbed Check'] = true,
+    ['Self Knock Check'] = true,
+    ['Forcefield Check'] = true
+}
+
+Config.SilentAimbot = {
+    ['Enabled'] = true,
+    ['Max Range'] = 750,
+    ['HitPart'] = "Precise Point",
+    ['Prediction'] = {
+        ['X'] = 0,
+        ['Y'] = 0,
+        ['Z'] = 0
+    },
+    ['FOV'] = {
+        ['Show FOV'] = false,
+        ["X Left"] = 4,
+        ["X Right"] = 4,
+        ["Y Upper"] = 4,
+        ["Y Lower"] = 4,
+        ["Z Left"] = 4,
+        ["Z Right"] = 4,
+        ['Weapon Configuration'] = {
+            ['Enabled'] = false,
+            ['Shotguns'] = {
+                ["X Left"] = 1.011, ["X Right"] = 1.62,
+                ["Y Upper"] = 2.025, ["Y Lower"] = 3.225,
+                ["Z Left"] = 1.175, ["Z Right"] = 1.212
+            },
+            ['Pistols'] = {
+                ["X Left"] = 1.011, ["X Right"] = 1.52,
+                ["Y Upper"] = 2.025, ["Y Lower"] = 3.425,
+                ["Z Left"] = 1.175, ["Z Right"] = 1.21
+            },
+            ['Automatics'] = {
+                ["X Left"] = 2.5, ["X Right"] = 2.5,
+                ["Y Upper"] = 2.5, ["Y Lower"] = 2.5,
+                ["Z Left"] = 2.5, ["Z Right"] = 2.5
+            },
+            ['Rifles'] = {
+                ["X Left"] = 2.5, ["X Right"] = 2.5,
+                ["Y Upper"] = 2.5, ["Y Lower"] = 2.5,
+                ["Z Left"] = 2.5, ["Z Right"] = 2.5
+            },
+            ['Others'] = {
+                ["X Left"] = 2.5, ["X Right"] = 2.5,
+                ["Y Upper"] = 2.5, ["Y Lower"] = 2.5,
+                ["Z Left"] = 2.5, ["Z Right"] = 2.5
+            }
+        }
+    }
+}
+
+Config.AntiCurve = {
+    ['Enabled'] = false,
+    ['Angle'] = 0.5,
+    ['Weapon Configuration'] = {
+        ['Enabled'] = true,
+        ['Shotguns'] = { ['Angle'] = 1.1 },
+        ['Pistols'] = { ['Angle'] = 0.7 },
+        ['Automatics'] = { ['Angle'] = 0.45 },
+        ['Rifles'] = { ['Angle'] = 0.4 },
+        ['Others'] = { ['Angle'] = 0.5 }
+    }
+}
+
+Config.CameraAimbot = {
+    ['Enabled'] = true,
+    ['Max Range'] = 750,
+    ['Mode'] = "Hold",
+    ['HitPart'] = "Closest Part",
+    ['Smoothing'] = {
+        ['Enabled'] = true,
+        ['X'] = 0.587,
+        ['Y'] = 0.539
+    },
+    ['Range Smoothing'] = {
+        ['Enabled'] = true,
+        ['Close'] = { ['X'] = 0.080, ['Y'] = 0.045 },
+        ['Medium'] = { ['X'] = 0.07, ['Y'] = 0.035 },
+        ['Far'] = { ['X'] = 0.03, ['Y'] = 0.025 }
+    },
+    ['Easing'] = "Linear",
+    ['Humanize'] = {
+        ['Bezier'] = false,
+        ['Enabled'] = true,
+        ['Scale'] = 0.009
+    },
+    ['Prediction'] = {
+        ['X'] = 0,
+        ['Y'] = 0,
+        ['Z'] = 0
+    },
+    ['Camera Aimbot Conditions'] = {
+        ['First Person'] = true,
+        ['Third Person'] = false,
+        ['Right Click'] = true,
+        ['Wall'] = false
+    },
+    ['FOV'] = {
+        ['Radius'] = "165",
+        ['Show FOV'] = false 
+    }
+}
+
+Config.TriggerBot = {
+    ['Enabled'] = true,
+    ['Max Range'] = 250,
+    ['Settings'] = {
+        ['Mode'] = "Hold",
+        ['Type'] = "FOV"
+    },
+    ['Delay Settings'] = {
+        ['Delay Toggle'] = true,
+        ['Delay'] = 0,
+        ['Weapon Configuration'] = {
+            ['Enabled'] = true,
+            ['Shotguns'] = { ['Delay'] = 0.013 },
+            ['Pistols'] = { ['Delay'] = 0.007 },
+            ['Automatics'] = { ['Delay'] = 0.04 },
+            ['Rifles'] = { ['Delay'] = 0.06 },
+            ['Others'] = { ['Delay'] = 0.095 }
+        }
+    },
+    ['Prediction'] = {
+        ['X'] = 0,
+        ['Y'] = 0,
+        ['Z'] = 0
+    },
+    ['FOV'] = {
+        ['Show FOV'] = false,
+        ['Size'] = {
+            ["X Left"] = 4,
+            ["X Right"] = 4,
+            ["Y Upper"] = 4,
+            ["Y Lower"] = 4,
+            ["Z Left"] = 4,
+            ["Z Right"] = 4
+        },
+        ['Weapon Configuration'] = {
+            ['Enabled'] = false,
+            ['Shotguns'] = {
+                ["X Left"] = 1.62, ["X Right"] = 1.62,
+                ["Y Upper"] = 2.6, ["Y Lower"] = 2.6,
+                ["Z Left"] = 1.175, ["Z Right"] = 1.175
+            },
+            ['Pistols'] = {
+                ["X Left"] = 1.02, ["X Right"] = 1.02,
+                ["Y Upper"] = 2.6, ["Y Lower"] = 2.6,
+                ["Z Left"] = 1.175, ["Z Right"] = 1.175
+            },
+            ['Automatics'] = {
+                ["X Left"] = 2.5, ["X Right"] = 2.5,
+                ["Y Upper"] = 2.5, ["Y Lower"] = 2.5,
+                ["Z Left"] = 2.5, ["Z Right"] = 2.5
+            },
+            ['Rifles'] = {
+                ["X Left"] = 2.5, ["X Right"] = 2.5,
+                ["Y Upper"] = 2.5, ["Y Lower"] = 2.5,
+                ["Z Left"] = 2.5, ["Z Right"] = 2.5
+            },
+            ['Others'] = {
+                ["X Left"] = 2.5, ["X Right"] = 2.5,
+                ["Y Upper"] = 2.5, ["Y Lower"] = 2.5,
+                ["Z Left"] = 2.5, ["Z Right"] = 2.5
+            }
+        }
+    }
+}
+
+Config.SpreadModifications = {
+    ['Enabled'] = false,
+    ['Mode'] = "Fixed",
+    ['Double-Barrel SG'] = { ['Fixed'] = 0, ['Min'] = 0.2, ['Max'] = 0.6 },
+    ['TacticalShotgun'] = { ['Fixed'] = 0, ['Min'] = 0.2, ['Max'] = 0.5 },
+    ['Shotgun'] = { ['Fixed'] = 0.9, ['Min'] = 0.85, ['Max'] = 0.95 },
+    ['DrumShotgun'] = { ['Fixed'] = 0.85, ['Min'] = 0.8, ['Max'] = 0.9 }
+}
+
+Config.SpeedModifications = {
+    ['Enabled'] = false,
+    ['Normal'] = { ['Multiplier'] = 8.8 },
+    ['Low Health'] = { ['Health Threshold'] = 35, ['Multiplier'] = 1.8 }
+}
+
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Xlfvthecheater/update/refs/heads/main/123", true))()
